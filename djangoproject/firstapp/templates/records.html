@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+{% block content %}
+<div class="content-wrapper">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Details</title>
+</head>
+    <div class="card-body">
+        <a href="/firstapp/form/" class="btn btn-success">ADD</a>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th style="width: 10px">Name</th>
+                <th>Email ID</th>
+                <th>Qualification</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for record in object_list %}
+
+            <tr>
+                <td>{{record.name}}</td>
+                <td>{{record.emailid}}</td>
+                <td>{{record.qualification}}</td>
+                <td><a href="/firstapp/edit_form/{{record.num}}" class="btn btn-primary">EDIT</a></td>
+                <td><a href="/firstapp/delete_form/{{record.num}}"  class="btn btn-danger">DELETE</a></td>
+            </tr>
+            {% endfor %}
+
+            </tbody>
+            </head>
+        </table>
+    </div>
+
+</div>
+
+
+{% endblock %}
+</html>

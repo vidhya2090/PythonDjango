@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+{% block content %}
+<div class="content-wrapper">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Details</title>
+</head>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th style="width: 10px">#</th>
+                <th>ID</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for key, value in data.items %}
+            <tr>
+                <td>{{key}}</td>
+                <td><a href="{{value}}">{{value}}</a></td>
+            </tr>
+            {% endfor %}
+
+            </tbody>
+            </head>
+        </table>
+    </div>
+
+</div>
+
+
+{% endblock %}
+</html>
